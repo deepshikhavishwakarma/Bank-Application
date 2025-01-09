@@ -36,7 +36,7 @@ The Banking Application is a Java-based web application that allows users to cre
 ### Steps to Run the Application
 1. **Clone the Repository**:
    ```bash
-   git clone [https://github.com/your-username/banking-application.git](https://github.com/deepshikhavishwakarma/Bank-Application.git)
+   git clone [https://github.com/deepshikhavishwakarma/Bank-Application.git]
    ```
 
 2. **Configure the Database**:
