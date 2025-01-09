@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank_App</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.8),
+		rgba(0, 0, 0, 0.9)),
+		url('https://th.bing.com/th/id/OIP.tgyNDr4LvB67hOStUOdbiAHaEr?w=1125&h=710&rs=1&pid=ImgDetMain');
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+}
+
+/* Glassmorphic Effect */
+.glass {
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	border-radius: 10px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+	text-align: center;
+	padding: 10px 20px;
+	margin-top: auto;
+	font-size: 0.9rem;
+}
+
+/* Form Container */
+.container {
+	text-align: center;
+	padding: 40px;
+	margin: 40px auto;
+	max-width: 500px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 10px;
+	margin: 10px 0;
+	border: none;
+	border-radius: 8px;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	outline: none;
+}
+
+input[type="text"]::placeholder, input[type="password"]::placeholder {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+input[type="submit"] {
+	padding: 12px;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 8px;
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background: rgba(255, 255, 255, 0.2);
+	border-color: rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+	margin-bottom: 20px;
+	font-size: 2rem;
+}
+
+.main h1 {
+	margin: 30px;
+}
+
+form a {
+	margin-top: 10px;
+}
+</style>
+</head>
+<body>
+	<!-- <!-- Navigation Bar -- >
+	<nav>
+		<div>
+			<a href="#">Home</a> <a href="#">About</a> <a href="#">Services</a> <a
+				href="#">Contact</a>
+		</div>
+	</nav> -->
+
+	<!-- Main Content -->
+	<div class="main">
+		<h1 style="text-align: center;">Welcome to Your BANK</h1>
+		<div class="container glass">
+			<h1>Register Here</h1>
+			<form action="register" method="post">
+				<input type="text" name="accNo" placeholder="Customer Account No." required>
+				<input type="text" name="cname" placeholder="Customer Name" required>
+				<input type="password" name="pword" placeholder="Password" min="6" max="15" required>
+				<input type="text" name="phno" placeholder="Contact" required> 
+				<input type="text" name="mail" placeholder="Mail Id" required> 
+				<input type="text" name="aadhar" placeholder="Aadhar No" required>
+				<input type="text" name="bal" placeholder="Initial Balance" required> 
+				<input type="text" name="accType" placeholder="Account Type" required> 
+				<input type="submit" value="Register"> 
+				<a href="home.html">Already have an account?<br>Login here
+				</a>
+			</form>
+		</div>
+	</div>
+
+
+	<!-- Footer -->
+	<footer> &copy; 2024 Your Company. All Rights Reserved. </footer>
+</body>
+</html>
+
+
+
+

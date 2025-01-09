@@ -1,0 +1,162 @@
+create table bankProject(
+  AccountNo Number(15) primary key,
+  CustName varchar2(30),
+  Password varchar2(15),
+  Contact Number(15),
+  Mail varchar2(25),
+  Aadhar Number(16),
+  Balance Number(10,2),
+  AccountType Varchar2(25)
+);
+
+
+
+//<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    import="Customer_Pkg.*"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank_App</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://th.bing.com/th/id/OIP.tgyNDr4LvB67hOStUOdbiAHaEr?w=1125&h=710&rs=1&pid=ImgDetMain');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+    }
+
+    .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 20px;
+        background: rgba(0, 0, 0, 0.8);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .container {
+        text-align: center;
+        padding: 40px;
+        margin: 50px auto;
+        max-width: 400px;
+    }
+
+    .main h1 {
+        text-align: center;
+        margin: 30px;
+    }
+
+    .container a {
+        display: block;
+        margin: 10px 0;
+        padding: 15px 20px;
+        text-decoration: none;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.7);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        transition: all 0.3s;
+    }
+
+    .container a:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #000;
+        border-color: #fff;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px 20px;
+        margin-top: auto;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main">
+        <h1>Welcome to Your BANK</h1>
+       
+        <div class="container glass">
+       
+       <% 
+       CustBean cb = (CustBean)session.getAttribute("cbean");
+       String msg = (String)request.getAttribute("msg");
+       /*  String cName = (String)request.getAttribute("alist");*/
+       
+      
+		 %><h2 style="color:orange;"> <% out.println(msg+" "+cb.getCname());%></h2>
+        <%--  <jsp:include page="">abc</jsp:include> --%>
+           
+            <h1>Please Select Option</h1>
+           <% 
+       CustBean cb2 = (CustBean)session.getAttribute("cbean1");
+       
+       /*  String cName = (String)request.getAttribute("alist");*/
+       
+      
+		 %>
+            <%=cb2!=null?cb.getBalance():"" %>
+          
+            <a href="balance">Balance</a>
+            <a href="#">Deposit</a>
+            <a href="#">Withdraw</a>
+            <a href="#">Transfer Money</a>
+            <a href="#">About</a>
+            <a href="#">Change Password</a>
+            <a href="#">Close Account</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Your Company. All Rights Reserved.
+    </footer>
+    
+</body>
+</html>
